@@ -82,8 +82,13 @@ func shStreamOutput(bin string, args ...string) error {
 func main() {
 	jsonStr, err := sh("npm", "run", "--json")
 	if err != nil {
+		log.Fatalln("couldn't read package.json")
+	}
+
+	if jsonStr == "" {
 		log.Fatalln("couldn't read scripts from package.json")
 	}
+
 	jsonRun, err := unmarshalNpmRun(jsonStr)
 	if err != nil {
 		log.Fatalln("couldn't unmarshal npm run --json output")
