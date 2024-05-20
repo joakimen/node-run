@@ -1,6 +1,6 @@
 # node-run
 
-Discover and run npm scripts interactively.
+Discover and run npm scripts in the current package interactively.
 
 Supports regular and workspace-style projects.
 
